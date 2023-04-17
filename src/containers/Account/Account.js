@@ -1,9 +1,11 @@
 import { Box, Container, CssBaseline, Typography } from "@mui/material";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Account = () => {
-  const email = sessionStorage.getItem("email");
-  const password = sessionStorage.getItem("password");
+  const state = useSelector((state) => state);
+
+  console.log(state);
 
   return (
     <Container component="main" maxWidth="sm">
@@ -20,10 +22,10 @@ const Account = () => {
           Welcome to the Account page!
         </Typography>
         <Typography component="p" sx={{ mt: 5 }} variant="subtitle1">
-          Email: {email}
+          Email: {state.email}
         </Typography>
         <Typography component="p" variant="subtitle1">
-          Password: {password}
+          Password: {state.password}
         </Typography>
       </Box>
     </Container>

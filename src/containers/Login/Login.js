@@ -53,11 +53,6 @@ const Login = () => {
       emailInput === hardcodedCred.email &&
       passwordInput === hardcodedCred.password
     ) {
-      const token = "123456abcdef";
-      sessionStorage.setItem("auth-token", token);
-      sessionStorage.setItem("email", hardcodedCred.email);
-      sessionStorage.setItem("password", hardcodedCred.password);
-
       navigate("/home");
     } else {
       alert("wrong email or password combination");
